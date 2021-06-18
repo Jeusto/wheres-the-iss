@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+// General
+html {
+  font-size: 14px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+  color: #282c34;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (min-width: 1199px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+// Globe side
+#wrapper {
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  width: 96%;
+  max-width: 100em;
+  #earth-col {
+    width: 60%;
+    min-width: 60%;
+    max-width: 60%;
+    flex: 0 1 50vw;
+  }
+  #result-col {
+    width: 80%;
+  }
+}
+@media (max-width: 1199px) {
+  html {
+    font-size: 14px;
+  }
+  #wrapper {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    #earth-col {
+      order: 0;
+      flex: 0 1 100vw;
+      max-width: 50em;
+    }
+  }
+}
+
+// Information side
+#link {
+  &:hover {
+    color: #61afef;
+  }
+}
+#title {
+  font-size: 2.5rem;
+}
+#external-link {
+  position: relative;
+  top: 0.4rem;
+  width: 2.5rem;
+}
+#space-station {
+  width: 3rem;
+  display: inline-block;
+}
+#location {
+  color: #4b5363;
+}
+#coordinates_link {
+  cursor: pointer;
+  &:hover {
+    color: #61afef;
+  }
+}
+#astronautes {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  li {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    width: 1.75rem;
+    margin-right: 0.5rem;
+  }
+}
+
+// Background
+#background {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 140%;
+}
+#background-left {
+  height: 50vw;
+  width: 100%;
+  background-color: #15171b;
+}
+#background-right {
+  height: 80%;
+  width: 100%;
+  background-color: #ffffff;
+}
+@media (min-width: 1199px) {
+  #background {
+    flex-direction: row;
+    height: 100%;
+  }
+  #background-left {
+    width: 30%;
+    height: 100%;
+  }
+  #background-right {
+    width: 70%;
+    height: 100%;
+  }
+}
+@media (min-width: 2999px) {
+  #background-left {
+    width: 40%;
+    height: 100%;
+  }
+  #background-right {
+    width: 60%;
+    height: 100%;
+  }
+}
+
+// Dark mode
+.dark {
+  html {
+    background-color: #15171b;
+  }
+  #background {
+    #background-left {
+      background-color: #ffffff;
+    }
+    #background-right {
+      background-color: #15171b;
+    }
+  }
+  #link {
+    color: #ffffff;
+    &:hover {
+      color: #61afef;
+    }
+  }
+  #location,
+  #astronautes {
+    color: rgb(219, 219, 219);
+  }
+}
+
+// Globe overlays
+.trail {
+  display: block;
+  width: 0.75em;
+  height: 0.75em;
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: all;
+  transform: translate(-50%, -50%);
+}
+.trail::before {
+  content: "";
+  position: absolute;
+  left: 0.1875em;
+  top: 0.1875em;
+  width: 0.375em;
+  height: 0.375em;
+  opacity: 0.1;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+.hotspot {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: all;
+  transform: translate(-50%, -50%);
+}
+.hotspot::before {
+  content: "";
+  position: absolute;
+  left: 0.375em;
+  top: 0.375em;
+  width: 0.75em;
+  height: 0.75em;
+  opacity: 1;
+  background-color: white;
+  border-radius: 50%;
+}
+.hotspot:hover::before {
+  opacity: 1;
+}
+.hotspot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.75em;
+  height: 0.75em;
+  border: 0.5px white solid;
+  opacity: 0.8;
+  border-radius: 50%;
+  transform: translate(-25%, -25%) scale();
+  animation: pulse 3s infinite;
+}
+.hotspot + .hotspot::after {
+  animation-delay: 1.5s;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.5);
+  }
+}
+
+// Other
+#theme {
+  position: absolute;
+  cursor: pointer;
+  left: 2rem;
+  top: 2rem;
+  width: 3rem;
+  z-index: 9999;
+}
+#map {
+  display: none;
+}

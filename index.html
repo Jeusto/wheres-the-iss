@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Where's the ISS ?</title>
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="style/css/style.css" />
+  </head>
+  <body>
+    <img id="map" src="./images/day.png" />
+    <img id="theme" src="./images/day.svg" alt="" />
+
+    <div id="background">
+      <div id="background-left"></div>
+      <div id="background-right"></div>
+    </div>
+
+    <div id="wrapper">
+      <div id="earth-col">
+        <div id="element" class="earth-js earth-container earth-ready"></div>
+      </div>
+
+      <div id="result-col">
+        <a
+          id="link"
+          href="https://en.wikipedia.org/wiki/International_Space_Station"
+          target="_blank"
+        >
+          <h1 id="title">
+            Where's the international space station ?
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="external-link"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+              />
+              <path
+                d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+              />
+            </svg></h1
+        ></a>
+        <h2 id="location">
+          Currently over <span id="current_country">France</span>, at
+          coordinates
+          <a id="coordinates_link" target="_blank" href="">
+            <span id="current_coordinates"></span>
+          </a>
+          with
+          <span id="astronautes_number">10</span>
+          astronautes on board:
+        </h2>
+        <svg
+          data-src="https://s2.svgbox.net/flags-ld.svg?ic=fr"
+          width="32"
+          height="32"
+          color="#000000"
+        ></svg>
+        <ul id="astronautes">
+          <li><img src="images/usa.svg " alt="" srcset="" />Mark Vande Hei</li>
+          <li><img src="images/usa.svg " alt="" srcset="" />Megan McArthur</li>
+          <li><img src="images/usa.svg " alt="" srcset="" />Shane Kimbrough</li>
+          <li><img src="images/cn.svg " alt="" srcset="" />Nie Haisheng</li>
+          <li><img src="images/cn.svg " alt="" srcset="" />Liu Boming</li>
+          <li><img src="images/cn.svg " alt="" srcset="" />Tang Hongbo</li>
+          <li><img src="images/fr.svg " alt="" srcset="" />Thomas Pesquet</li>
+          <li><img src="images/ru.svg " alt="" srcset="" />Oleg Novitskiy</li>
+          <li><img src="images/ru.svg " alt="" srcset="" />Pyotr Dubrov</li>
+          <li><img src="images/jpn.svg " alt="" srcset="" />Akihiko Hoshide</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="./earth.js"></script>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
