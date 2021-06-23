@@ -146,4 +146,5 @@ theme.addEventListener("click", function () {
 
 setTimeout(() => {
   updateMapTexture();
+  document.querySelector(".loader-div").style.display = "none";
 }, 1000);

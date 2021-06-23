@@ -28710,6 +28710,7 @@ theme.addEventListener("click", function () {
 
 setTimeout(() => {
   updateMapTexture();
+  document.querySelector(".loader-div").style.display = "none";
 }, 1000);
 
 },{"country-reverse-geocoding":208}],207:[function(require,module,exports){
